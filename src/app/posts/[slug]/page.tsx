@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) return {};
-  const url = `${SITE_URL}/posts/${post.slug}`;
+  const url = `${SITE_URL}/posts/${encodeURIComponent(post.slug)}`;
   return {
     title: post.title,
     description: post.description,

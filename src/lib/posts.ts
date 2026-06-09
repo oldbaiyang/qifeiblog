@@ -18,7 +18,8 @@ const POSTS_DIR = path.join(process.cwd(), "content", "posts");
 
 interface RawFrontmatter {
   title?: string;
-  date?: string;
+  // gray-matter auto-parses YAML date strings into JS Date.
+  date?: string | Date;
   description?: string;
   tags?: string[];
 }
@@ -42,10 +43,15 @@ function readMeta(filePath: string): PostMeta | null {
   const { data } = matter(raw);
   const fm = data as RawFrontmatter;
   if (!fm.title || !fm.date) return null;
+  // gray-matter auto-parses YAML date into a JS Date; normalize to YYYY-MM-DD.
+  const dateStr =
+    fm.date instanceof Date
+      ? fm.date.toISOString().slice(0, 10)
+      : String(fm.date);
   return {
     slug: fileToSlug(path.basename(filePath)),
     title: fm.title,
-    date: fm.date,
+    date: dateStr,
     description: fm.description ?? "",
     tags: Array.isArray(fm.tags) ? fm.tags : [],
   };
@@ -91,8 +97,25 @@ export async function getAllPosts(): Promise<Post[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  const filePath = path.join(POSTS_DIR, slugToFile(slug));
-  if (!fs.existsSync(filePath)) return null;
+  // Slug may come URL-encoded (from <Link> pre-rendering) or raw (from
+  // generateStaticParams). Try the literal first, then the decoded form.
+  const candidates = [slug];
+  try {
+    const decoded = decodeURIComponent(slug);
+    if (decoded !== slug) candidates.push(decoded);
+  } catch {
+    /* not a valid encoded string */
+  }
+  for (const s of candidates) {
+    const filePath = path.join(POSTS_DIR, slugToFile(s));
+    if (fs.existsSync(filePath)) {
+      return buildPost(filePath);
+    }
+  }
+  return null;
+}
+
+async function buildPost(filePath: string): Promise<Post | null> {
   const meta = readMeta(filePath);
   if (!meta) return null;
   const raw = fs.readFileSync(filePath, "utf8");

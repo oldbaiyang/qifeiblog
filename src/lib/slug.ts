@@ -1,16 +1,12 @@
-// Convert a markdown filename to a URL slug.
-// We strip the .md extension and encode the rest, which keeps Chinese /
-// unicode characters readable in URLs (browsers display them properly).
+// Slug = filename without .md extension. We keep the original characters
+// (including Chinese, spaces, punctuation) and URL-encode at the call site
+// when building Link hrefs. This avoids the double-encoding footgun and
+// keeps the file-system ↔ slug mapping trivially reversible.
 
 export function fileToSlug(filename: string): string {
-  return encodeURIComponent(filename.replace(/\.md$/i, ""));
+  return filename.replace(/\.md$/i, "");
 }
 
 export function slugToFile(slug: string): string {
-  // Inverse: decode, then append .md
-  try {
-    return `${decodeURIComponent(slug)}.md`;
-  } catch {
-    return `${slug}.md`;
-  }
+  return `${slug}.md`;
 }
