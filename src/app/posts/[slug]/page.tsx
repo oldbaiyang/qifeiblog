@@ -11,9 +11,6 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  // Slug must be the URL-encoded form so it matches the URL segment that
-  // <Link> produces (encodeURIComponent). Next.js does a strict string
-  // match between generateStaticParams output and the actual URL.
   return getAllPostSlugs().map((slug) => ({
     slug: encodeURIComponent(slug),
   }));
@@ -49,12 +46,12 @@ export default async function PostPage({ params }: PageProps) {
   const post = await getPostBySlug(slug);
   if (!post) notFound();
   return (
-    <article className="mx-auto max-w-3xl px-6 py-12">
-      <header className="mb-8">
-        <h1 className="text-foreground text-3xl font-bold tracking-tight md:text-4xl">
+    <article className="mx-auto max-w-2xl px-6 py-12 sm:py-16">
+      <header className="mb-10">
+        <h1 className="text-foreground text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
           {post.title}
         </h1>
-        <div className="mt-4">
+        <div className="mt-5">
           <PostMeta
             date={post.date}
             tags={post.tags}

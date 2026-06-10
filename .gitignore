@@ -42,3 +42,8 @@ next-env.d.ts
 
 # publish.sh: drafts with incomplete frontmatter
 /content/.incomplete/
+
+# Dev / debug artifacts
+.playwright-mcp/
+qifeiblog-home*.png
+qifeiblog-home*.jpg

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { PostCard } from "@/components/PostCard";
+import { Sidebar } from "@/components/Sidebar";
 import { getAllTags, getPostsByTag } from "@/lib/posts";
 
 interface PageProps {
@@ -25,18 +26,30 @@ export default async function TagPage({ params }: PageProps) {
   const posts = getPostsByTag(tag);
   if (posts.length === 0) notFound();
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-foreground text-3xl font-bold tracking-tight">
-        标签：<span className="text-primary">{tag}</span>
-      </h1>
-      <p className="text-muted-foreground mt-2">共 {posts.length} 篇</p>
-      <ul className="mt-8 space-y-6">
-        {posts.map((p) => (
-          <li key={p.slug}>
-            <PostCard post={p} />
-          </li>
-        ))}
-      </ul>
+    <div className="page-shell">
+      <Sidebar />
+      <main>
+        <header className="mb-6">
+          <div className="text-muted-foreground text-xs font-medium uppercase tracking-wider">
+            标签
+          </div>
+          <h1 className="text-foreground mt-1 text-2xl font-bold tracking-tight sm:text-3xl">
+            <span className="text-accent">{tag}</span>
+          </h1>
+          <p className="text-muted-foreground mt-1 text-sm">共 {posts.length} 篇</p>
+        </header>
+        <ul className="space-y-4">
+          {posts.map((p, i) => (
+            <li
+              key={p.slug}
+              style={{ animationDelay: `${i * 40}ms` }}
+              className="fade-up"
+            >
+              <PostCard post={p} />
+            </li>
+          ))}
+        </ul>
+      </main>
     </div>
   );
 }
