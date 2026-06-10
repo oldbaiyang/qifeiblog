@@ -11,7 +11,12 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return getAllPostSlugs().map((slug) => ({ slug }));
+  // Slug must be the URL-encoded form so it matches the URL segment that
+  // <Link> produces (encodeURIComponent). Next.js does a strict string
+  // match between generateStaticParams output and the actual URL.
+  return getAllPostSlugs().map((slug) => ({
+    slug: encodeURIComponent(slug),
+  }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

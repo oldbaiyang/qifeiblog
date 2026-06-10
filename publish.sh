@@ -86,7 +86,7 @@ if [[ "$DO_PUSH" -eq 1 ]]; then
   echo "[git] 添加并提交"
   (
     cd "$SCRIPT_DIR"
-    git add content/posts/ out/ .gitignore 2>/dev/null || git add content/posts/
+    git add content/posts/
     if git status --short | grep -q .; then
       git commit -m "sync: $(date +%Y-%m-%d) 同步博客 ($post_count 篇)"
     else
