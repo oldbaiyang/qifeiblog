@@ -37,6 +37,10 @@ npm run dev                 # localhost:3000，HMR
 # 质量
 npm run lint                # eslint
 npm run typecheck           # tsc --noEmit
+
+# 部署
+./scripts/deploy.sh            # sync vault + build + wrangler pages deploy
+./scripts/deploy.sh --push     # deploy 完成后 git push origin main
 ```
 
 ## 目录结构
@@ -56,17 +60,24 @@ src/
 content/
 ├── posts/                  # 同步进来的 .md 文章（git 跟踪）
 └── .incomplete/            # frontmatter 不全的草稿（git 忽略）
+
+scripts/
+├── deploy.sh               # 一键部署到 CF Pages（读 .env.local 的 CF secrets）
+└── prebuild.mjs            # 生成 rss.xml / sitemap.xml / robots.txt 到 public/
 ```
 
 ## 部署
 
-构建产物在 `out/`，可直接上传到 Cloudflare Pages：
+构建产物在 `out/`，推送到 Cloudflare Pages：
 
 ```bash
-npx wrangler pages deploy out --project-name=qifeiblog
+./scripts/deploy.sh            # 一键：sync vault + build + wrangler pages deploy
+./scripts/deploy.sh --push     # deploy 完成后 git push origin main
 ```
 
-或：在 Cloudflare Dashboard 创建 Pages 项目，绑 GitHub repo，**build command 留空**、**output 选 `out`**、`output 目录` 用项目根的 `out`。
+Secrets（`CLOUDFLARE_ACCOUNT_ID`、`CLOUDFLARE_API_TOKEN`）放在 `.env.local`（git ignored），脚本会自动 export 给 wrangler。其它环境变量（`NEXT_PUBLIC_*`）不传给 wrangler，避免泄漏。
+
+或手工：在 Cloudflare Dashboard 创建 Pages 项目，绑 GitHub repo，**build command 留空**、**output 选 `out`**、`output 目录` 用项目根的 `out`。
 
 ## 环境变量
 
@@ -79,7 +90,7 @@ npx wrangler pages deploy out --project-name=qifeiblog
 
 ## 写作约定
 
-回复用户时**始终用中文**。博客文章应：
+博客文章应：
 
 - 标题简洁、信息密度高
 - `description` 1-2 句话，说清楚读完能获得什么
