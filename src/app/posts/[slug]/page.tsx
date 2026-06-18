@@ -11,9 +11,11 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return getAllPostSlugs().map((slug) => ({
-    slug: encodeURIComponent(slug),
-  }));
+  // Return raw slug. Filesystem dir name and route param both use the
+  // raw form; CF Pages decodes URL paths before file lookup, so raw
+  // Chinese dir names match decoded requests. getPostBySlug() still
+  // accepts encoded form as a fallback for inbound percent-encoded URLs.
+  return getAllPostSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

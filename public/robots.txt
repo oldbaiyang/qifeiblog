@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://qifeiblog.com/sitemap.xml
+Sitemap: https://blog.aqifei.top/sitemap.xml

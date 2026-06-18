@@ -81,7 +81,7 @@ export function Sidebar() {
           {posts.slice(0, 5).map((p) => (
             <li key={p.slug}>
               <Link
-                href={`/posts/${encodeURIComponent(p.slug)}`}
+                href={`/posts/${p.slug}`}
                 className="hover:text-accent block text-xs leading-snug text-[var(--muted-foreground)] transition-colors"
               >
                 <span className="line-clamp-2">{p.title}</span>

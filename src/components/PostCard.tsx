@@ -36,7 +36,7 @@ export function PostCard({ post }: PostCardProps) {
       {/* Title */}
       <h2 className="text-foreground text-lg font-semibold leading-snug tracking-tight sm:text-xl">
         <Link
-          href={`/posts/${encodeURIComponent(post.slug)}`}
+          href={`/posts/${post.slug}`}
           className="after:absolute after:inset-0 hover:text-[var(--accent)]"
         >
           {post.title}

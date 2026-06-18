@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title><![CDATA[qifeiblog]]></title>
-    <link>https://qifeiblog.com</link>
+    <link>https://blog.aqifei.top</link>
     <description><![CDATA[个人技术博客：AI 工具、效率提升、Cloudflare 与开源实践。]]></description>
     <language>zh-cn</language>
-    <atom:link href="https://qifeiblog.com/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.aqifei.top/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title><![CDATA[免费指纹浏览器完全指南：多账号登录不再烦恼]]></title>
-      <link>https://qifeiblog.com/posts/免费指纹浏览器完全指南：多账号登录不再烦恼</link>
-      <guid isPermaLink="true">https://qifeiblog.com/posts/免费指纹浏览器完全指南：多账号登录不再烦恼</guid>
+      <link>https://blog.aqifei.top/posts/免费指纹浏览器完全指南：多账号登录不再烦恼</link>
+      <guid isPermaLink="true">https://blog.aqifei.top/posts/免费指纹浏览器完全指南：多账号登录不再烦恼</guid>
       <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[还在为多账号登录被封号烦恼？本文带你从零了解指纹浏览器，并推荐几款2026年最好用的免费工具。]]></description>
     </item>
     <item>
       <title><![CDATA[Claude Code 常用命令完整整理]]></title>
-      <link>https://qifeiblog.com/posts/Claude Code 常用命令完整整理</link>
-      <guid isPermaLink="true">https://qifeiblog.com/posts/Claude Code 常用命令完整整理</guid>
+      <link>https://blog.aqifei.top/posts/Claude Code 常用命令完整整理</link>
+      <guid isPermaLink="true">https://blog.aqifei.top/posts/Claude Code 常用命令完整整理</guid>
       <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[本文整理了 Claude Code 命令行工具的完整命令参考，包括终端启动命令、斜杠命令、快捷键和实用技巧，帮助你更高效地使用 AI 编程助手。]]></description>
     </item>
     <item>
       <title><![CDATA[使用 Cloudflare R2 对象存储搭建免费图床（PicList 上传实战）]]></title>
-      <link>https://qifeiblog.com/posts/使用CloudflareR2搭建免费图床-PicList上传实战</link>
-      <guid isPermaLink="true">https://qifeiblog.com/posts/使用CloudflareR2搭建免费图床-PicList上传实战</guid>
+      <link>https://blog.aqifei.top/posts/使用CloudflareR2搭建免费图床-PicList上传实战</link>
+      <guid isPermaLink="true">https://blog.aqifei.top/posts/使用CloudflareR2搭建免费图床-PicList上传实战</guid>
       <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[详细介绍如何利用 Cloudflare R2 免费的对象存储服务搭建个人图床，并使用 PicList 客户端通过 S3 兼容 API 上传图片，支持自定义域名访问。]]></description>
     </item>
     <item>
       <title><![CDATA[notebooklm-py：为 Google NotebookLM 打造的全功能 Python API]]></title>
-      <link>https://qifeiblog.com/posts/notebooklm-py-jie-du</link>
-      <guid isPermaLink="true">https://qifeiblog.com/posts/notebooklm-py-jie-du</guid>
+      <link>https://blog.aqifei.top/posts/notebooklm-py-jie-du</link>
+      <guid isPermaLink="true">https://blog.aqifei.top/posts/notebooklm-py-jie-du</guid>
       <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[深入解析 notebooklm-py 项目：一个非官方的 Python 库，让你以程序化方式调用 NotebookLM 的全部功能]]></description>
     </item>
     <item>
       <title><![CDATA[OpenClaw养虾指南：从入门到精通]]></title>
-      <link>https://qifeiblog.com/posts/OpenClaw养虾指南：从入门到精通</link>
-      <guid isPermaLink="true">https://qifeiblog.com/posts/OpenClaw养虾指南：从入门到精通</guid>
+      <link>https://blog.aqifei.top/posts/OpenClaw养虾指南：从入门到精通</link>
+      <guid isPermaLink="true">https://blog.aqifei.top/posts/OpenClaw养虾指南：从入门到精通</guid>
       <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[一份 OpenClaw 入门指南，从安装配置、Slack渠道对接、Skill技能系统到全自动模式配置，手把手教你养好这只开源龙虾。]]></description>
     </item>
     <item>
       <title><![CDATA[Scrapling：自适应网页抓取框架，绕过反爬无压力]]></title>
-      <link>https://qifeiblog.com/posts/Scrapling：自适应网页抓取框架，绕过反爬无压力</link>
-      <guid isPermaLink="true">https://qifeiblog.com/posts/Scrapling：自适应网页抓取框架，绕过反爬无压力</guid>
+      <link>https://blog.aqifei.top/posts/Scrapling：自适应网页抓取框架，绕过反爬无压力</link>
+      <guid isPermaLink="true">https://blog.aqifei.top/posts/Scrapling：自适应网页抓取框架，绕过反爬无压力</guid>
       <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[一个强大的 Python 网页抓取框架，能自动适应网站结构变化，内置反爬绕过能力，支持从单页请求到大规模爬虫的完整解决方案。]]></description>
     </item>
     <item>
       <title><![CDATA[llmfit：根据硬件自动匹配最佳LLM模型的神器]]></title>
-      <link>https://qifeiblog.com/posts/llmfit：根据硬件自动匹配最佳LLM模型的神器</link>
-      <guid isPermaLink="true">https://qifeiblog.com/posts/llmfit：根据硬件自动匹配最佳LLM模型的神器</guid>
+      <link>https://blog.aqifei.top/posts/llmfit：根据硬件自动匹配最佳LLM模型的神器</link>
+      <guid isPermaLink="true">https://blog.aqifei.top/posts/llmfit：根据硬件自动匹配最佳LLM模型的神器</guid>
       <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[一个终端工具，自动检测你的硬件配置，从数百个模型中找出最适合你机器运行的LLM，再也不用纠结选什么模型了。]]></description>
     </item>
     <item>
       <title><![CDATA[用AI写了个博客网站]]></title>
-      <link>https://qifeiblog.com/posts/用AI写了个博客网站</link>
-      <guid isPermaLink="true">https://qifeiblog.com/posts/用AI写了个博客网站</guid>
+      <link>https://blog.aqifei.top/posts/用AI写了个博客网站</link>
+      <guid isPermaLink="true">https://blog.aqifei.top/posts/用AI写了个博客网站</guid>
       <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[这个网站是AI写的]]></description>
     </item>
