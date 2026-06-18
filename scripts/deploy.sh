@@ -41,10 +41,14 @@ if [[ ! -f "$ENV_FILE" ]]; then
 fi
 
 # Only export CLOUDFLARE_* keys; ignore comments, blank lines, and other vars.
-# `set -a` auto-exports any assignment made while it's active.
+# Use a temp file rather than process substitution — bash 3.2 on macOS has
+# flaky behavior with `source <(...)` (token ends up unset despite success).
+ENV_TMP="$(mktemp)"
+trap 'rm -f "$ENV_TMP"' EXIT
+grep -E '^[[:space:]]*CLOUDFLARE_' "$ENV_FILE" | sed 's/^[[:space:]]*//' > "$ENV_TMP"
 set -a
 # shellcheck disable=SC1090
-source <(grep -E '^[[:space:]]*CLOUDFLARE_' "$ENV_FILE" | sed 's/^[[:space:]]*//')
+source "$ENV_TMP"
 set +a
 
 : "${CLOUDFLARE_API_TOKEN:?[error] CLOUDFLARE_API_TOKEN missing in .env.local}"
