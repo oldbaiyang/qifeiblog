@@ -2,18 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.aqifei.top</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/about</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://blog.aqifei.top/posts/Claude Fable 5 速览：三个点看懂地表最强</loc>
+    <lastmod>2026-06-22T00:00:00.000Z</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/posts/免费指纹浏览器完全指南：多账号登录不再烦恼</loc>
@@ -57,122 +62,127 @@
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/AI</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E5%B7%A5%E5%85%B7</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E5%BC%80%E6%BA%90</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blog.aqifei.top/tags/Python</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blog.aqifei.top/tags/Agent</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blog.aqifei.top/tags/AI%E5%B7%A5%E5%85%B7</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blog.aqifei.top/tags/API</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blog.aqifei.top/tags/blog</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/Claude</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.aqifei.top/tags/Python</loc>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.aqifei.top/tags/Agent</loc>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.aqifei.top/tags/AI%E5%B7%A5%E5%85%B7</loc>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.aqifei.top/tags/API</loc>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.aqifei.top/tags/blog</loc>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/Cloudflare</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/LLM</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/NotebookLM</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/OpenClaw</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/PicList</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/R2</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E5%9B%BE%E5%BA%8A</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E6%8C%87%E7%BA%B9%E6%B5%8F%E8%A7%88%E5%99%A8</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E6%95%99%E7%A8%8B</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E7%88%AC%E8%99%AB</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.aqifei.top/tags/%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86</loc>
-    <lastmod>2026-06-18T14:18:01.421Z</lastmod>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.aqifei.top/tags/%E9%80%9F%E8%A7%88</loc>
+    <lastmod>2026-06-22T16:48:28.590Z</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
