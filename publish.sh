@@ -6,8 +6,17 @@
 #   ./publish.sh --push     # 同步 + build + git commit + git push
 #   ./publish.sh --no-build # 仅同步（调试用）
 #   ./publish.sh -h         # 帮助
+#
+# Vault 源目录设计：
+#   VAULT_BLOG    = 「已发布权威源」。脚本会先把它整体同步到 content/posts/，并
+#                   用 --delete 移除 vault 中已不存在的老文章。写完确认要发的文
+#                   章放在这里。
+#   VAULT_DRAFTS  = 「待写/草稿区」。仅做增量合并，**绝不删除**任何文件，避免
+#                   把刚才从 VAULT_BLOG 同步进来的文章误当成"旧文件"清掉。
+#                   这是旧版 publish.sh 的 bug：两次 rsync 都用 --delete，第二
+#                   次会把第一次同步的内容全部删掉。
 
-set -euo pipefail
+set -eo pipefail
 
 # ---- 可配置 ----
 VAULT_BLOG="/Users/zcy/dev/github/obsidian_vault/qifeiblog"
@@ -45,33 +54,37 @@ done
 mkdir -p "$DEST" "$INCOMPLETE"
 
 # ---- 步骤 2：从 vault 同步 ----
+# 第一个源用 --delete（权威），第二个源不带 --delete（仅增量合并）。
 sync_one() {
   local src="$1"
+  shift || true
+  local extra_args=("$@")
   if [[ ! -d "$src" ]]; then
     echo "[skip] $src 不存在"
     return 0
   fi
-  echo "[sync] $src -> $DEST"
-  rsync -av --delete "${RSYNC_EXCLUDES[@]}" "$src/" "$DEST/"
+  local flags="default"
+  [[ ${#extra_args[@]} -gt 0 ]] && flags="${extra_args[*]}"
+  echo "[sync] $src -> $DEST  (flags: $flags)"
+  rsync -av "${extra_args[@]}" "${RSYNC_EXCLUDES[@]}" "$src/" "$DEST/"
 }
 
-sync_one "$VAULT_BLOG"
+sync_one "$VAULT_BLOG" --delete
 sync_one "$VAULT_DRAFTS"
 
 # ---- 步骤 3：把 frontmatter 不全的草稿移到 .incomplete/ ----
-shopt -s nullglob
+# 用 find 替代 shopt -s nullglob，避免 zsh 下不生效。
 moved=0
-for f in "$DEST"/*.md; do
-  if grep -q "这里写摘要" "$f" || grep -qE 'date:.*\{\{' "$f"; then
+while IFS= read -r -d '' f; do
+  if grep -q "这里写摘要" "$f" 2>/dev/null || grep -qE 'date:.*\{\{' "$f" 2>/dev/null; then
     echo "[incomplete] $(basename "$f") -> .incomplete/"
     mv "$f" "$INCOMPLETE/"
     moved=$((moved + 1))
   fi
-done
-shopt -u nullglob
+done < <(find "$DEST" -maxdepth 1 -name "*.md" -type f -print0)
 
-post_count=$(ls -1 "$DEST"/*.md 2>/dev/null | wc -l | tr -d ' ')
-incomplete_count=$(ls -1 "$INCOMPLETE"/*.md 2>/dev/null | wc -l | tr -d ' ')
+post_count=$(find "$DEST" -maxdepth 1 -name "*.md" -type f | wc -l | tr -d ' ')
+incomplete_count=$(find "$INCOMPLETE" -maxdepth 1 -name "*.md" -type f | wc -l | tr -d ' ')
 echo "[sync] 完成。已发布：$post_count 篇，未完成：$incomplete_count 篇（移出 $moved 篇）"
 
 # ---- 步骤 4：构建 ----
