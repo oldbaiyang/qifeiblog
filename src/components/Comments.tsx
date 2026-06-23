@@ -20,12 +20,11 @@ export function Comments({ slug }: { slug: string }) {
         repoId={repoId}
         category={category}
         categoryId={categoryId}
-        mapping="specific"
-        term={slug}
+        mapping="pathname"
         strict="0"
         reactionsEnabled="1"
         emitMetadata="0"
-        inputPosition="top"
+        inputPosition="bottom"
         theme="preferred_color_scheme"
         lang="zh-CN"
         loading="lazy"
