@@ -53,6 +53,20 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="bg-background text-foreground flex min-h-full flex-col">
+        {/* Google Analytics (gtag.js) — static-export safe via direct script tags */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-C09YZQQS4S"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.dataLayer = window.dataLayer || [];" +
+              "function gtag(){dataLayer.push(arguments);}" +
+              "gtag('js', new Date());" +
+              "gtag('config', 'G-C09YZQQS4S');",
+          }}
+        />
         <ThemeProvider>
           <SiteHeader />
           <main className="flex-1">{children}</main>
